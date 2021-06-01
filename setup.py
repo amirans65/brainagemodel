@@ -4,13 +4,13 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="tskeras", 
+    name="brainagemodel", 
     version="0.0.1",
     author="Amir H. Ansari, Kirubin Pillay",
     author_email="amirans65.ai@gmail.com",
     description="This package provids the essential implimentations of a deep neural network for prediction of a preterm age that was published in 'Brain-age as an estimator of neurodevelopmental outcome: A deep learning approach for neonatal cot-side monitoring'.",
     long_description_content_type="text/markdown",
-    url="https://gitlab.com/amirans65/tskeras",
+    url="https://github.com/amirans65/BrainAgeModel",
     packages=setuptools.find_packages(),
     classifiers=[
         "License :: OSI Approved :: MIT License",
@@ -23,5 +23,5 @@ setuptools.setup(
         "Intended Audience :: Developers",
     ],
     python_requires='>=3.5',
-    install_requires=['tensorflow', 'numpy', 'scipy'],
+    install_requires=['tensorflow', 'numpy', 'scipy', 'tqdm'],
 )
