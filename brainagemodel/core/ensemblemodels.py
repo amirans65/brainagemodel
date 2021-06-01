@@ -12,7 +12,7 @@ class EnsembleModels():
     Parameters:
     ===========
     CH: the number of eeg channels {1, 2, 4, or 8}
-    trained_model_directory: the directory in which the ensemble models are located. The name of the models must be 'model[x].mdl' (e.g. model1.mdl, model2.mdl, ...). It maximally supports 1000 models.
+    trained_model_directory: the directory in which the ensemble models are located. The name of the models must be 'model[x].h5' (e.g. model1.h5, model2.h5, ...). It maximally supports 1000 models.
     verbose: if True, it shows the loading progress; otherwise, it is silent.
     '''
     def __init__(self, CH, trained_model_directory, verbose=True):
@@ -35,7 +35,7 @@ class EnsembleModels():
         if self.verbose: 
             rn = tqdm(rn)
         for sn in rn:
-            fname = f'{trained_model_directory}/model{sn}.mdl'
+            fname = f'{trained_model_directory}/model{sn}.h5'
             if(not os.path.exists(fname)):
                 continue
             self.models_paths[sn] = fname

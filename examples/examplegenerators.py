@@ -4,7 +4,7 @@ producing random numbers as an example to test the codes
 import numpy as np
 from tensorflow.keras.utils import Sequence
 
-class TrainingGenerator(Sequence):
+class BaseGenerator(Sequence):
     def __init__(self, batch_size, CH):
         self.batch_size = batch_size
         self.CH = CH
@@ -13,10 +13,9 @@ class TrainingGenerator(Sequence):
 
     def __len__(self):
         return 100
+
     def get_fullepoch_recordings_indices(self):
         return np.array(self.__fullepoch_recordings_indices).flatten()
-    def on_epoch_start(self):
-        return super().on_epoch_end()
 
     def __getitem__(self, idx):
         x = np.random.randn(self.batch_size, 30*64, self.CH) # generate random EEG segments
@@ -26,8 +25,11 @@ class TrainingGenerator(Sequence):
         self.__fullepoch_recordings_indices.append(np.random.randint(0,13, self.batch_size )) # generate random recordings
         return (x, y)
 
-class ValidationGenerator(TrainingGenerator):
+class TrainingGenerator(BaseGenerator):
     pass
 
-class TestGenerator(TrainingGenerator):
+class ValidationGenerator(BaseGenerator):
+    pass
+
+class TestGenerator(BaseGenerator):
     pass

@@ -34,3 +34,10 @@ class TestGenerator(Sequence):
         '''
         raise TypeError('TestGenerator is not yet fully implimented!') 
 
+
+    def get_fullepoch_recordings_indices(self):
+        '''
+        Implementation of this function is optional. It is usefull for aggregation function to know the corresponding recording of each EEG segment. 
+        This function must return a vector of indices or recording names with length of full_epoch (=len*batch). 
+        '''
+        raise TypeError('TestGenerator is not yet fully implimented!') 

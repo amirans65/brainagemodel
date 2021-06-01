@@ -1,26 +1,29 @@
+#%%
 '''
 This script is for training the proposed Sinc model. Before using it the marked lines corresponding the training and validation datagenerators should be altered.
 '''
 
+import os
 import numpy as np
 import tensorflow as tf
 import tensorflow.keras.backend as K
 from tensorflow.keras.callbacks import EarlyStopping
 from tensorflow.keras.callbacks import ModelCheckpoint
 from brainagemodel.models.model_sinc import net
+from brainagemodel.core.config import Config
+
 from examplegenerators import TrainingGenerator,ValidationGenerator
 #from traininggenerator import TrainingGenerator
 #from validationgenerator import ValidationGenerator
-from brainagemodel.core.config import Config
 
 
 #%% set configuration
 config = Config()
-config.random_seed=0
+config.random_seed=1
 config.fs=64
 config.CH=8
 config.frame_sec=30
-config.epochs = 2
+config.epochs = 200
 config.batch = 64
 
 
@@ -47,6 +50,10 @@ h = model.fit(trgen,
 print(h.history)
 
 #%% save the model
-tf.keras.models.save_model(model, f'trained_models_ch{config.CH}/model{config.random_seed}.mdl')
+folder = f'trained_models_ch{config.CH}'
+filename = f'model{config.random_seed}.h5'
+if(not os.path.exists(folder)):
+    os.makedirs(folder)
+tf.keras.models.save_model(model, f'{folder}/{filename}')
 print('saved.')
 #%%

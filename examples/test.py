@@ -11,9 +11,10 @@ import numpy as np
 import tensorflow as tf
 import tensorflow.keras.backend as K
 from brainagemodel.models.model_sinc import net
-#from testgenerator import TestGenerator
-from examplegenerators import TestGenerator
 from brainagemodel.core.config import Config
+
+from examplegenerators import TestGenerator
+#from testgenerator import TestGenerator
 
 
 #%% set configuration
@@ -21,7 +22,7 @@ use_pre_trained = False
 
 config = Config()
 config.fs=64
-config.CH=1
+config.CH=8
 config.frame_sec=30
 config.epochs = 200
 config.batch = 64
@@ -42,7 +43,8 @@ if(use_pre_trained):
     print(f'number of ensembles: {len(pre_model)}')
 else:
     from brainagemodel.core.ensemblemodels import EnsembleModels
-    pre_model = EnsembleModels(config.CH, )
+    saved_models = f'trained_models_ch{config.CH}'
+    pre_model = EnsembleModels(config.CH, saved_models)
     print(f'number of ensembles: {len(pre_model)}')
 
 # %% predict
