@@ -1,0 +1,10 @@
+**/__pycache__/
+.vscode/
+
+[Ll]og/
+[Ll]ogs/
+dist/
+build/
+*.egg-info/
+
+
