@@ -1,7 +1,20 @@
+## Dependencies
 ![python](https://img.shields.io/static/v1?label=python&message=3.6%20%7C%203.7%20%7C%203.8&color=blue) ![PyPi](https://img.shields.io/static/v1?label=pypi%20package&message=2.5.0&color=blue)
 
-## Requirements
 ![Tensorflow](https://img.shields.io/static/v1?label=tensorflow&message=2.1&color=green) ![numpy](https://img.shields.io/static/v1?label=numpy&message=1.18&color=green) ![scipy](https://img.shields.io/static/v1?label=scipy&message=1.4&color=green) ![tqdm](https://img.shields.io/static/v1?label=tqdm&message=4.43&color=green)
+
+## Install
+
+To install the current release, run the following command: 
+```
+$ pip install brainagemodel
+```
+
+Or the following for an editable mode installation:
+```
+$ pip install -e brainagemodel
+```
+
 
 ## Brain-age Estimation
 This repository contains python scripts for automated neonatal brain-age estimation algorithm published in:
