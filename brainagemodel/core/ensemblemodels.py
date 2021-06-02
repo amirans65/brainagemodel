@@ -1,6 +1,5 @@
 import os
 import numpy as np
-from re import VERBOSE
 import tensorflow as tf
 from tqdm import tqdm
 from tensorflow.keras.utils import Sequence
