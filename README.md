@@ -65,7 +65,7 @@ To use this package, the following steps should be done:
 ## Citation
 Please cite the following papers: 
 1. Ansari A.H., Pillay K., et al., "Brain-age as an estimator of neurodevelopmental outcome: A deep learning approach for neonatal cot-side monitoring", 2021. 
-2. Ansari A.H., Pillay K., et al., "A Deep Shared Multi-Scale Inception Network Enables Accurate Neonatal Quiet Sleep Detection with Limited EEG Channels" 2021.
+2. Ansari A.H., Pillay K., et al., "A deep shared multi-scale inception network enables accurate neonatal quiet sleep detection with limited EEG channels" 2021.
 
 ## License
 ![License](https://img.shields.io/static/v1?label=License&message=MIT&color=green)
