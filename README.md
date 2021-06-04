@@ -68,5 +68,6 @@ Please cite the following papers:
 2. Ansari A.H., Pillay K., et al., "A deep shared multi-scale inception network enables accurate neonatal quiet sleep detection with limited EEG channels", 2021.
 
 ## License
+
 ![License](https://img.shields.io/static/v1?label=License&message=MIT&color=green)
 
